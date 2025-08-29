@@ -155,6 +155,7 @@ class MetaYamlPerturber(type):
             input_args = self.exec_args
 
         input_array = np.asarray(input)
+        print(self._perturber.get_config())
         output_array, _ = self._perturber.perturb(input_array, *input_args)
 
         return ImageModule.fromarray(output_array)
